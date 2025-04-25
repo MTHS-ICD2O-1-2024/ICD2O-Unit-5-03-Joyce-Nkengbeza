@@ -4,19 +4,31 @@
 // Created on: Mar 2025
 // This file contains the JS functions for index.html
 
-"use strict"
+'use strict'
 
-function calculatearea() {
+function calculate() {
   // input
-  const abase = parseInt(document.getElementById('a-base').value);
-  const bbase = parseInt(document.getElementById('b-base').value);
-  const height = parseInt(document.getElementById('height-length').value);
-    
+  const movieRating = document.getElementById("movieforage").value
 
   // process
-    const trapezoidarea = [(abase + bbase) / 2] * height
+  if (movieRating >= 17) {
+    // output
+    document.getElementById("results").innerHTML =
+      "You can see R rated movies."
+  }
 
-  // output
-  document.getElementById('area').innerHTML = 'area is:' + trapezoidarea + 'mm²'
+  else if (movieRating >= 13) {
+    document.getElementById("results").innerHTML =
+      "You can see PG-13 rated movies."
+  }
+
+  else if (movieRating >= 5) {
+    document.getElementById("results").innerHTML =
+      "You can see G and PG rated movies."
+  }
+
+  else {
+    document.getElementById("results").innerHTML =
+      "Uhh, you are to young to see most things."
+  }
 }
-
